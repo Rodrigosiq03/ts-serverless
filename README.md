@@ -1,0 +1,1 @@
+# Project to test serverless framework with ci/cd
