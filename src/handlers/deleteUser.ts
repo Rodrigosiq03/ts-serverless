@@ -1,8 +1,8 @@
 import { client } from "../db/client";
 import { DeleteItemCommand } from "@aws-sdk/client-dynamodb"
-import { marshall, unmarshall } from "@aws-sdk/util-dynamodb"
+import { marshall } from "@aws-sdk/util-dynamodb"
 
-export async function getUser(event: any) {
+export async function handler(event: any) {
   const response = { statusCode: 200, body: '' };
 
   try {

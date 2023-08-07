@@ -2,7 +2,7 @@ import { client } from "../db/client";
 import { PutItemCommand } from "@aws-sdk/client-dynamodb"
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb"
 
-export async function createUser(event: any) {
+export async function handler(event: any) {
   const response = { statusCode: 201, body: '' };
 
   try {
