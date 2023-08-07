@@ -30,7 +30,7 @@ export async function updateUser(event: any) {
       user: unmarshall(Item!),
 
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     response.statusCode = 500;
     response.body = JSON.stringify({
