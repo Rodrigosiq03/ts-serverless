@@ -18,7 +18,9 @@ functions:
   getUser:
     handler: dist/src/handlers/getUser.handler
     events:
-      - httpApi: 'GET /get-user'
+      - http:
+          path: /get-user
+          method: GET
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -29,7 +31,9 @@ functions:
   createUser:
     handler: dist/src/handlers/createUser.handler
     events:
-      - httpApi: 'POST /create-user'
+      - http:
+          path: /create-user
+          method: POST
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -40,7 +44,9 @@ functions:
   updateUser:
     handler: dist/src/handlers/updateUser.handler
     events:
-      - httpApi: 'PUT /update-user'
+      - http: 
+          path: /update-user
+          method: PUT
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -51,7 +57,9 @@ functions:
   deleteUser:
     handler: dist/src/handlers/deleteUser.handler
     events:
-      - httpApi: 'DELETE /delete-user'
+      - http:
+          path: /delete-user
+          method: DELETE
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -62,7 +70,9 @@ functions:
   getAllUsers:
     handler: dist/src/handlers/getAllUsers.handler
     events:
-      - httpApi: 'GET /get-all-users'
+      - http:
+          path: /get-all-users
+          method: GET
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
