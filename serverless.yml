@@ -12,7 +12,6 @@ custom:
   usersMembersTableName: users-table-${self:provider.stage}
 
 plugins:
-  - serverless-plugin-typescript
   - serverless-iam-roles-per-function
 
 functions:
