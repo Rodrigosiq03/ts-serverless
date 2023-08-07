@@ -15,7 +15,7 @@ export async function getUser(event: any) {
       users: Items?.map((item) => unmarshall(item)),
       rawUsers: Items
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     response.statusCode = 500;
     response.body = JSON.stringify({

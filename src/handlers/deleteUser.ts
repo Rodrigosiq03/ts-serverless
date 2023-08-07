@@ -14,7 +14,7 @@ export async function getUser(event: any) {
     response.body = JSON.stringify({
       message: "Successfully deleted user",
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     response.statusCode = 500;
     response.body = JSON.stringify({
