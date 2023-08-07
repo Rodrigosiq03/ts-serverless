@@ -18,9 +18,13 @@ functions:
   getUser:
     handler: src/handlers/getUser.handler
     events:
-      - http:
-          path: get-user?userId={userId}
+      - httpApi:
+          path: get-user
           method: GET
+          request:
+            parameters:
+              querystrings:
+                userId: true
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -31,7 +35,7 @@ functions:
   createUser:
     handler: src/handlers/createUser.handler
     events:
-      - http:
+      - httpApi:
           path: create-user
           method: POST
     memorySize: 128 # mb
@@ -44,9 +48,13 @@ functions:
   updateUser:
     handler: src/handlers/updateUser.handler
     events:
-      - http:
-          path: update-user?userId={userId}
+      - httpApi:
+          path: update-user
           method: PUT
+          request:
+            parameters:
+              querystrings:
+                userId: true
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -57,9 +65,13 @@ functions:
   deleteUser:
     handler: src/handlers/deleteUser.handler
     events:
-      - http:
-          path: delete-user?userId={userId}
+      - httpApi:
+          path: delete-user
           method: DELETE
+          request:
+            parameters:
+              querystrings:
+                userId: true
     memorySize: 128 # mb
     timeout: 5 # seconds
     iamRoleStatements:
@@ -70,7 +82,7 @@ functions:
   getAllUsers:
     handler: src/handlers/getAllUsers.handler
     events:
-      - http:
+      - httpApi:
           path: get-all-users
           method: GET
     memorySize: 128 # mb
