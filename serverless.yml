@@ -16,7 +16,7 @@ plugins:
 
 functions:
   getUser:
-    handler: dist/handlers/getUser.handler
+    handler: dist/src/handlers/getUser.handler
     events:
       - httpApi: 'GET /get-user'
     memorySize: 128 # mb
@@ -27,7 +27,7 @@ functions:
           - "dynamodb:GetItem"
         Resource: !GetAtt UsersTable.Arn
   createUser:
-    handler: dist/handlers/createUser.handler
+    handler: dist/src/handlers/createUser.handler
     events:
       - httpApi: 'POST /create-user'
     memorySize: 128 # mb
@@ -38,7 +38,7 @@ functions:
           - "dynamodb:PutItem"
         Resource: !GetAtt UsersTable.Arn
   updateUser:
-    handler: dist/handlers/updateUser.handler
+    handler: dist/src/handlers/updateUser.handler
     events:
       - httpApi: 'PUT /update-user'
     memorySize: 128 # mb
@@ -49,7 +49,7 @@ functions:
           - "dynamodb:UpdateItem"
         Resource: !GetAtt UsersTable.Arn
   deleteUser:
-    handler: dist/handlers/deleteUser.handler
+    handler: dist/src/handlers/deleteUser.handler
     events:
       - httpApi: 'DELETE /delete-user'
     memorySize: 128 # mb
@@ -60,7 +60,7 @@ functions:
           - "dynamodb:DeleteItem"
         Resource: !GetAtt UsersTable.Arn
   getAllUsers:
-    handler: dist/handlers/getAllUsers.handler
+    handler: dist/src/handlers/getAllUsers.handler
     events:
       - httpApi: 'GET /get-all-users'
     memorySize: 128 # mb
